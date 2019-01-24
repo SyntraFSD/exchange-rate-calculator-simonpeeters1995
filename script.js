@@ -66,7 +66,7 @@ function apiEchange() {
 
 function showExchange(response) {
   //Math.round(num * 100) / 100
-  const value = Math.round((textbox.value * response)*100)/100;
+  const value = Math.round((parseFloat(textbox.value) * response)*100)/100;
   output.textContent = value;
 }
 
