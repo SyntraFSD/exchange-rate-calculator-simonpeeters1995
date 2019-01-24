@@ -66,8 +66,12 @@ function apiEchange() {
 
 function showExchange(response) {
   //Math.round(num * 100) / 100
-  const value = Math.round((parseFloat(textbox.value) * response)*100)/100;
-  output.textContent = value;
+  const value = parseFloat(textbox.value) * response;
+  output.textContent = value.toLocaleString('nl_BE',{
+    style:"currency",
+    currency: select2.value,
+    currencyDisplay: 'symbol'
+  });
 }
 
 button.addEventListener('click',apiEchange);
